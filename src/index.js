@@ -171,8 +171,10 @@ export default class extends PureComponent {
     this.image.crossOrigin = "anonymous";
 
     // Draw the image once loaded
-    this.image.onload = () =>
+    this.image.onload = () =>{
+      console.log(this.image.width)
       drawImage({ ctx: this.ctx.grid, img: this.image });
+    }
     this.image.src = this.props.imgSrc;
   };
 
